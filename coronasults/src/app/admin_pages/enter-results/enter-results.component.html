@@ -1,8 +1,21 @@
 <input type="text" placeholder="First Name"><br>
+
 <input type="text" placeholder="Last Name"><br>
+
 <input type="date"><br>
-<select>
-	<option ngFor="location in locations" value="{{ location }}">{{ location }}</option>
+
+<label for="location">Location Tested: </label>
+
+<select id="location" [(ngModel)]="location">
+	<option *ngFor="let location of locations" value="{{ location }}">{{ location }}</option>
 </select><br>
+<div *ngIf="location == 'New Location'">
+	<label for="new-location">New Location: </label>
+	<input type="text">
+</div>
+
 <label for="call">Would this person like to be called for their results?</label>
 <input type="checkbox">
+<br>
+
+<button (click)="logValue()">Enter</button>
