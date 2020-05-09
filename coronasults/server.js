@@ -11,7 +11,7 @@ const port = process.env.PORT || 3001;
 app.use(express.static(__dirname + "/dist/coronasults"));
 
 //Make Other Requests go to Landing Page
-app.get('*', (req, res) => {
+app.get('/index', (req, res) => {
   res.sendFile(path.join(__dirname) + "/dist/coronasults/index.html");
 });
 

@@ -11,7 +11,7 @@ export class ResultsService {
 
   constructor(private http: HttpClient) { }
 
-  getResults(): void {
-    console.log(this.http.get<any[]>(this._url));
+  getResults(): Observable<any> {
+    return this.http.get<any[]>(this._url);
   }
 }

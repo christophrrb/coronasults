@@ -13,8 +13,8 @@ export class ResultsComponent implements OnInit {
   constructor(private _resultsService: ResultsService) { }
 
   ngOnInit() {
-    // this._resultsService.getResults()
-    //   .subscribe(data => this.results = data);
+    this._resultsService.getResults()
+      .subscribe(data => this.results = data);
   }
 
   public logResults(): void {
