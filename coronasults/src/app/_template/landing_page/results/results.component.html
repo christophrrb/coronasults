@@ -4,11 +4,11 @@
 			<input type="text" placeholder="First Name"><br>
 			<input type="text" placeholder="Last Name"><br>
 			<input type="date"><br>
-			<input type="number" placeholder="5-Digit Zip Code"><br>
-			<button>Results</button>
+			<button (click)="logResults()">Results</button>
 		</td>
 		<td>
-			<!-- Result would show here -->
+			{{ results[0].firstName }}
 		</td>
 	</tr>
 </table>
+<app-footer></app-footer>

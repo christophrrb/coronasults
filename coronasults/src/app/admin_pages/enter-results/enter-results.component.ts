@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ResultsService } from 'src/app/_service/results.service';
 
 @Component({
   selector: 'app-enter-results',
@@ -13,10 +14,6 @@ export class EnterResultsComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-  }
-
-  public logValue(): void {
-    console.log(this.location);
   }
 
 }
