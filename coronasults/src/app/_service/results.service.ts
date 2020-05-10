@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ResultsService {
 
-  private _url: string = "localhost:3001/users"
+  private _url: string = "http://localhost:3001/users"
 
   constructor(private http: HttpClient) { }
 

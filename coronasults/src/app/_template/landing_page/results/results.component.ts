@@ -8,17 +8,28 @@ import { ResultsService } from '../../../_service/results.service'
 })
 export class ResultsComponent implements OnInit {
 
-  public results = [];
+  public result;
 
   constructor(private _resultsService: ResultsService) { }
 
   ngOnInit() {
-    this._resultsService.getResults()
-      .subscribe(data => this.results = data);
+	 this._resultsService.getResults()
+		.subscribe(data => this.results = data[0].currentResult);
+  }
+
+  private determineResult(result: number): string {
+	 switch (result) {
+		 case 0:
+			return 'Positive';
+		 case 1:
+			 return 'Negative';
+		 case 2:
+			 return 'Pending';
+	 }
   }
 
   public logResults(): void {
-    console.log(this.results);
+	 console.log(this.result);
   }
   
 

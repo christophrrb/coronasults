@@ -4,11 +4,13 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
 const path = require('path')
+const cors = require('cors')
 
 const port = process.env.PORT || 3001;
 
 //Frontend location
 app.use(express.static(__dirname + "/dist/coronasults"));
+app.use(cors());
 
 //Make Other Requests go to Landing Page
 app.get('/index', (req, res) => {
