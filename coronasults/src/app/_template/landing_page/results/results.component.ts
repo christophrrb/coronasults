@@ -14,17 +14,17 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
 	 this._resultsService.getResults()
-		.subscribe(data => this.results = data[0].currentResult);
+		.subscribe(data => this.result = this.determineResult(data[0].currentResult)); //Only gets data fr
   }
 
   private determineResult(result: number): string {
 	 switch (result) {
 		 case 0:
-			return 'Positive';
+			return 'Undetermined';
 		 case 1:
-			 return 'Negative';
+			 return 'Positive';
 		 case 2:
-			 return 'Pending';
+			 return 'Negative';
 	 }
   }
 
