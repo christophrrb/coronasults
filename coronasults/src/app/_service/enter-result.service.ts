@@ -24,7 +24,8 @@ export class EnterResultService {
 										"firstName": result.firstName,
 										"lastName": result.lastName,
 										"birthday": result.birthdate,
-										"locationTested": result.location}, {headers: this.headers})
-			.subscribe(() => console.log('Posted'));
+										"locationTested": result.locationTested,
+										"currentResult": result.currentResult} , {headers: this.headers})
+			.subscribe();
 	}
 }

@@ -14,6 +14,7 @@ export class EnterResultsComponent implements OnInit {
   public lastName: string;
   public birthdate: string;
   public location: string = this.locations[0];
+  public currentResult: number = 0;
 
   constructor(private enterResultService:EnterResultService) { }
 
@@ -25,7 +26,8 @@ export class EnterResultsComponent implements OnInit {
       "firstName": this.firstName,
       "lastName": this.lastName,
       "birthdate": this.birthdate,
-      "location": this.location
+      "locationTested": this.location,
+      "currentResult": this.currentResult
     });
   }
 
