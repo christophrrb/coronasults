@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { LoginService } from './_service/login.service';
 import { EnterResultService } from './_service/enter-result.service';
+import { ModifyResultService } from './_service/modify-result.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { EnterResultService } from './_service/enter-result.service';
     HttpClientModule,
     RouterModule
   ],
-  providers: [ResultsService, EnterResultService, LoginService],
+  providers: [ResultsService, EnterResultService, ModifyResultService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

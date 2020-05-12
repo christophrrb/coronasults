@@ -1,11 +1,26 @@
 <app-admin-bar></app-admin-bar>
 <label for="first-name">First Name</label><br>
-<input id="first-name" class="form-control" type="text" placeholder="First Name"><br>
+<input id="first-name" class="form-control" [(ngModel)]="firstName" type="text"><br>
 
 <label for="last-name">Last Name</label><br>
-<input id="last-name" class="form-control" type="text" placeholder="Last Name"><br>
+<input id="last-name" class="form-control" [(ngModel)]="lastName" type="text"><br>
 
-<label for="date">Birthdate</label>
-<input id="date" class="form-control" type="date"><br>
+<label for="date">Birthdate</label><br>
+<input id="date" class="form-control" [(ngModel)]="birthdate" type="date" ><br>
 
-<button class="btn btn-primary">Results</button>
+<div *ngIf="modify">
+	<label for="location">Location Tested</label><br>
+	<select id="location" [(ngModel)]="location" class="form-control">
+		<option *ngFor="let location of locations" value="{{ location }}">{{ location }}</option>
+	</select><br>
+	
+	<label for="current-result">Current Result</label><br>
+	<select [(ngModel)]="currentResult" class="form-control">
+		<option value="0">Undetermined</option>
+		<option value="1">Positive</option>
+		<option value="2">Negative</option>
+	</select><br>
+</div>
+
+<button *ngIf="!modify" class="btn btn-primary" (click)="findUser()">Find User</button>
+<button *ngIf="modify" class="btn btn-success" (click)="modifyUser()">Save Changes</button>
