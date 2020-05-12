@@ -17,7 +17,15 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3000/users/5eb5a7fda053780208b3164b
+PATCH http://localhost:3000/users/5eb61e5e9c30f14563abe7d7
+Content-Type: application/json 
+
+{
+  "currentResult":1
+}
+
+###
+DELETE http://localhost:3000/users/5eba0b94c284772088412f7f
 
 
 

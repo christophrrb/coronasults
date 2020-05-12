@@ -8,13 +8,15 @@ import { ResultsService } from '../../../_service/results.service'
 })
 export class ResultsComponent implements OnInit {
 
-  public result;
+	public result;
+	public firstName;
+	public lastName;
+	public date;
 
   constructor(private _resultsService: ResultsService) { }
 
   ngOnInit() {
-	 this._resultsService.getResults()
-		.subscribe(data => this.result = this.determineResult(data[0].currentResult)); //Only gets data fr
+	 
   }
 
   private determineResult(result: number): string {
@@ -30,6 +32,11 @@ export class ResultsComponent implements OnInit {
 
   public logResults(): void {
 	 console.log(this.result);
+  }
+
+  public getResults() {
+	this._resultsService.getResults({"firstName": this.firstName, "lastName": this.lastName, "birthdate": this.date})
+	.subscribe(data => this.result = this.determineResult(data.currentResult));
   }
   
 

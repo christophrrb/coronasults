@@ -9,18 +9,7 @@ export class LoginService {
 
   constructor(private _http: HttpClient) { }
 
-  getUser() {
-    
+  getUser(user: any): Observable<any> {
+    return this._http.get<any>('http://localhost:3000/users/' + user.firstName + '/' + user.lastName + '/' + user.birthdate);
   }
-
-  /*
-  getUser(user: any): Object {
-    let result = this._http.get<any>('http://localhost:3001/users');
-    if ((result[0] == undefined) || (result[0] == {})) {
-      return {};
-    } else {
-      return result[0];
-    }
-  }
-  */
 }

@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ResultsService {
 
-  private _url: string = "http://localhost:3001/users"
+  private _url: string = "http://localhost:3000/users"
 
-  constructor(private http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
-  getResults(): Observable<any> {
-    return this.http.get<any[]>(this._url);
+  getResults(user: any): Observable<any> {
+    return this._http.get<any>('http://localhost:3000/users/' + user.firstName + '/' + user.lastName + '/' + user.birthdate);
   }
 }
