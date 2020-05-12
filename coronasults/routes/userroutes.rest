@@ -5,6 +5,7 @@ GET http://localhost:3000/users
 
 
 Get http://localhost:3000/users/5eb5a883d60eee02283e8613
+
 ###
 POST http://localhost:3000/users
 Content-Type: application/json
@@ -14,6 +15,18 @@ Content-Type: application/json
   "lastName": "Kazmi",
   "birthday":"2001-01-16",
   "location": "California"
+}
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "firstName": "Christopher",
+  "lastName": "Ballenger",
+  "birthday":"2001-01-16",
+  "location": "California",
+  "CurrentResult": 2
 }
 
 ###
