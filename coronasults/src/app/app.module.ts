@@ -17,6 +17,9 @@ import { RouterModule } from '@angular/router';
 import { LoginService } from './_service/login.service';
 import { EnterResultService } from './_service/enter-result.service';
 import { ModifyResultService } from './_service/modify-result.service';
+import { DataVisualizationComponent } from './visualization/data-visualization/data-visualization.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { CreateUserComponent } from './admin_pages/create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ModifyResultService } from './_service/modify-result.service';
     LoginPageComponent,
     EnterResultsComponent,
     AdminBarComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    DataVisualizationComponent,
+    AboutPageComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,

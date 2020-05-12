@@ -1,3 +1,5 @@
+<h2>Find Your Result</h2><br>
+
 <div class="row">
 	<div class="col-md-8">
 		<label for="first-name">First Name</label><br>
@@ -9,10 +11,10 @@
 		<label for="date">Birthdate</label><br>
 		<input [(ngModel)]="date" id="date" class="form-control" type="date" ><br>
 		
-		<button (click)="getResults()" class="btn btn-primary">Results</button>
+		<button [disabled]="firstName == '' || lastName == '' || date == ''" (click)="getResults()" class="btn btn-primary">Results</button>
 	</div>
 	<div id="result" class="col-md-4">
-		<h3 class="align-middle">{{result}}</h3>
+		<h3 [innerHTML]="result"></h3>
 	</div>
 </div>
 <app-footer></app-footer>

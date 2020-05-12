@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 })
 export class LoginPageComponent implements OnInit {
 
-  public username: string;
-  public pw: string;
+  public username: string = '';
+  public pw: string = '';
 
   constructor(private _loginService: LoginService,
               private _router: Router) { }

@@ -10,7 +10,7 @@
 
 <div *ngIf="modify">
 	<label for="location">Location Tested</label><br>
-	<select id="location" [(ngModel)]="location" class="form-control">
+	<select id="location" [(ngModel)]="locationTested" class="form-control">
 		<option *ngFor="let location of locations" value="{{ location }}">{{ location }}</option>
 	</select><br>
 	
