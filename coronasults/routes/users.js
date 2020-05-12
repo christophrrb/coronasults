@@ -50,6 +50,7 @@ router.post('/', async (req, res) => {
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     birthday: req.body.birthday,
+    currentResult: req.body.currentResult,
     locationTested: req.body.locationTested
   })
 
