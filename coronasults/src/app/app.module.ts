@@ -14,6 +14,7 @@ import { AdminBarComponent } from './admin_pages/admin-bar/admin-bar.component';
 import { SearchResultComponent } from './admin_pages/search-result/search-result.component';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { LoginService } from './_service/login.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     RouterModule
   ],
-  providers: [ResultsService],
+  providers: [ResultsService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
