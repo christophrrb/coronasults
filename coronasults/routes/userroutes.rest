@@ -36,3 +36,12 @@ Content-Type: application/json
 {
   "firstName": "Tommy"
 }
+
+###
+GET http://localhost:3000/users/countPositive
+
+###
+GET http://localhost:3000/users/countNegative
+
+###
+GET http://localhost:3000/users/countUndetermined

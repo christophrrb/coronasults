@@ -20,7 +20,7 @@ export class LoginPageComponent implements OnInit {
   }
 
   public getUser() {
-    
+    this._router.navigate(['admin/enter-result']);
   }
 
 }

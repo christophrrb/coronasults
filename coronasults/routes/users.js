@@ -14,6 +14,36 @@ router.use(express.json())
   }
 })
 
+router.route("/countPositive").get(function(req, res) {
+  User.countDocuments({currentResult:1}, function(err, result) {
+  if (err) {
+  console.log(err);
+  } else {
+  res.json(result);
+  }
+  });
+  });
+
+router.route("/countNegative").get(function(req, res) {
+  User.countDocuments({currentResult:2}, function(err, result) {
+  if (err) {
+  console.log(err);
+  } else {
+  res.json(result);
+  }
+  });
+  });
+
+router.route("/countUndetermined").get(function(req, res) {
+  User.countDocuments({currentResult:0}, function(err, result) {
+  if (err) {
+  console.log(err);
+  } else {
+  res.json(result);
+  }
+  });
+  });
+
 // Creating one user
 router.post('/', async (req, res) => {
   const user = new User({
