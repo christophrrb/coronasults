@@ -1,22 +1,26 @@
 <app-admin-bar></app-admin-bar>
-<input type="text" placeholder="First Name"><br>
+<label for="first-name">First Name</label><br>
+<input id="first-name" class="form-control" type="text"><br>
 
-<input type="text" placeholder="Last Name"><br>
+<label for="last-name">Last Name</label><br>
+<input id="last-name" class="form-control" type="text"><br>
 
-<input type="date"><br>
+<label for="date">Birthdate</label><br>
+<input id="date" class="form-control" type="date" ><br>
 
-<label for="location">Location Tested: </label>
-
-<select id="location" [(ngModel)]="location">
+<label for="location">Location Tested</label><br>
+<select id="location" [(ngModel)]="location" class="form-control">
 	<option *ngFor="let location of locations" value="{{ location }}">{{ location }}</option>
 </select><br>
 <div *ngIf="location == 'New Location'">
 	<label for="new-location">New Location: </label>
-	<input type="text">
+	<input class="form-control" type="text">
 </div>
 
-<label for="call">Would this person like to be called for their results?</label>
-<input type="checkbox">
+<div class="custom-control custom-checkbox">
+	<input type="checkbox" class="custom-control-input" id="customCheck1">
+	<label class="custom-control-label" for="customCheck1">Would this person like to be called for their results?</label>
+ </div>
 <br>
 
-<button (click)="logValue()">Enter</button>
+<button (click)="logValue()" class="btn btn-primary mb-4">Enter</button>

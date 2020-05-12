@@ -34,6 +34,11 @@ router.get('/:id', getUser, (req, res) => {
   res.json(res.user)
 })
 
+// Getting one user by firstname lastname 
+router.get('/:firstName/:lastName', getUserByName,(req, res) => {
+  res.json(res.user)
+})
+
 // Updating one user
 router.patch('/:id', getUser, async (req, res) => {
   if (req.body.firstName != null) {
@@ -76,6 +81,20 @@ router.delete('/:id', getUser, async (req, res) => {
 async function getUser(req, res, next) {
   try {
     user = await User.findById(req.params.id)
+    if (user == null) {
+      return res.status(404).json({ message: 'Cant find user'})
+    }
+  } catch(err){
+    return res.status(500).json({ message: err.message })
+  }
+  
+  res.user = user
+  next()
+}
+
+async function getUserByName(req, res, next) {
+  try {
+    user = await User.findOne({firstName:req.params.firstName,lastName:req.params.lastName})
     if (user == null) {
       return res.status(404).json({ message: 'Cant find user'})
     }
