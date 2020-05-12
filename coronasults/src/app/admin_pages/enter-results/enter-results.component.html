@@ -1,12 +1,12 @@
 <app-admin-bar></app-admin-bar>
 <label for="first-name">First Name</label><br>
-<input id="first-name" class="form-control" type="text"><br>
+<input id="first-name" class="form-control" [(ngModel)]="firstName" type="text"><br>
 
 <label for="last-name">Last Name</label><br>
-<input id="last-name" class="form-control" type="text"><br>
+<input id="last-name" class="form-control" [(ngModel)]="lastName" type="text"><br>
 
 <label for="date">Birthdate</label><br>
-<input id="date" class="form-control" type="date" ><br>
+<input id="date" class="form-control" [(ngModel)]="birthdate" type="date" ><br>
 
 <label for="location">Location Tested</label><br>
 <select id="location" [(ngModel)]="location" class="form-control">
@@ -23,4 +23,4 @@
  </div>
 <br>
 
-<button (click)="logValue()" class="btn btn-primary mb-4">Enter</button>
+<button (click)="enterResult()" class="btn btn-primary mb-4">Enter</button>
