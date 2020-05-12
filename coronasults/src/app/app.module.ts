@@ -42,7 +42,7 @@ import { CreateUserComponent } from './admin_pages/create-user/create-user.compo
     HttpClientModule,
     RouterModule
   ],
-  providers: [ResultsService, EnterResultService, ModifyResultService, LoginService],
+  providers: [ResultsService, EnterResultService, ModifyResultService, ResultsService, LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
