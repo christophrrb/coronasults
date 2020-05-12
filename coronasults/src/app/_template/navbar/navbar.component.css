@@ -3,8 +3,9 @@ nav {
 }
 
 .coronaimg {
-  width: 100px;
-  height: 100px;
+  width: 30px;
+  height: 30px;
+  float: right; 
   background-color: #0CB1C4;
   animation-name: spin;
   animation-duration: 5000ms;
