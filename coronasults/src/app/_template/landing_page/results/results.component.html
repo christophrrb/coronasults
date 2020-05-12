@@ -1,14 +1,17 @@
-<table>
-	<tr>
-		<td>
-			<input type="text" placeholder="First Name"><br>
-			<input type="text" placeholder="Last Name"><br>
-			<input type="date"><br>
-			<button (click)="getResults()">Results</button>
-		</td>
-		<td>
-			<p>{{ result }}</p>
-		</td>
-	</tr>
-</table>
+<div class="row">
+	<div class="col-md-8">
+		<label for="first-name">First Name</label><br>
+		<input id="first-name" class="form-control" type="text"><hr>
+	
+		<label for="last-name">Last Name</label><br>
+		<input id="last-name" class="form-control" type="text"><hr>
+		
+		<label for="date">Birthdate</label><br>
+		<input id="date" class="form-control" type="date" ><br>
+		<button (click)="getResults()" class="btn btn-primary">Results</button>
+	</div>
+	<div id="result" class="col-md-4">
+		<h3 class="align-middle">{{result}}</h3>
+	</div>
+</div>
 <app-footer></app-footer>
