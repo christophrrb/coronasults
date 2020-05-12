@@ -3,7 +3,7 @@ const router = express.Router()
 const User = require('../models/user')
 
 // Getting all users
-router.get('/', async (req, res) => {
+ router.get('/', async (req, res) => {
   try {
     const users = await User.find()
     res.json(users)
@@ -36,6 +36,10 @@ router.get('/:id', getUser, (req, res) => {
 
 // Getting one user by firstname lastname 
 router.get('/:firstName/:lastName', getUserByName,(req, res) => {
+  res.json(res.user)
+})
+// Getting one user by firstname lastname 
+router.get('/:firstName/:lastName/:birthday', getUserByStuff,(req, res) => {
   res.json(res.user)
 })
 
@@ -105,5 +109,20 @@ async function getUserByName(req, res, next) {
   res.user = user
   next()
 }
+
+async function getUserByStuff(req, res, next) {
+  try {
+    user = await User.findOne({firstName:req.params.firstName,lastName:req.params.lastName,birthday:req.params.birthday})
+    if (user == null) {
+      return res.status(404).json({ message: 'Cant find user'})
+    }
+  } catch(err){
+    return res.status(500).json({ message: err.message })
+  }
+  
+  res.user = user
+  next()
+}
+
 
 module.exports = router 
